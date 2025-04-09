@@ -1,0 +1,19 @@
+appname = wechatwebapi
+httpaddr = ""
+httpport = 8005
+runmode = dev
+viewspath = "template"
+autorender = false
+copyrequestbody = true
+EnableDocs = true
+redislink = 156.241.132.160:6379
+redispass = "Zhenhao2017"
+redisdbnum = 1
+ocrurl = "http://156.241.132.160:9050/api/UnBan/WXSliderOCR"
+
+sessionon = true
+
+SessionName = "wicgo"
+ServerName = "wicgo"
+
+longlinkconnecttimeout = "1m"

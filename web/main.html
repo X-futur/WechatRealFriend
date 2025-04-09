@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/layui/css/layui.css" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
+  <script src="/layui/layui.js"></script>
+  <script src="WechatAPI.js"></script>
+  <script src="main.js" defer></script>
+  <title>已成功登录_微信好友检测</title>
+</head>
+<body style="background-color: #2aae67">
+
+<div class="layui-panel userInfo-panel" style="text-align: center;background-color: #f7f7f7;">
+  <h3 style="margin: 5px;">微信账号: <span id="wxid">加载中...</span></h3>
+  <br>
+  <h3 style="margin: 5px;">昵称: <span id="nickName">加载中...</span></h3>
+  <img src="" alt="加载中..." id="headImg" class="headImg">
+  <h3 style="margin: 5px;max-width: 300px;" class="layui-elip"><span id="signature">加载中...</span></h3>
+  <p style="color: crimson;">任务已经开始，离开或刷新页面将导致任务失败</p>
+  <span class="layui-font-12">开发者: StrayMeteor3337</span>
+</div>
+
+<div class="layui-panel main-panel" style="background-color: #f7f7f7;">
+  <h2 id="loadingTip">正在获取好友列表...</h2>
+  <h3 style="margin: 10px;">好友总数: <span id="numOfFriends">加载中...</span></h3>
+  <div style="border-top: 2px solid #16baaa;margin: 15px 0;"></div>
+  <h2 id="loadingTip2" style="margin-top: 10px;">正在等待前面的任务完成...</h2>
+  <div class="layui-progress" style="margin-top: 20px;" lay-showpercent="true" lay-filter="checkRelation-progress-bar">
+    <div class="layui-progress-bar" lay-percent="0/0"></div>
+  </div>
+  <h3 style="margin: 10px;color: #1f1f1f">删除你的人总数: <span id="numOfDeleteYou">加载中...</span></h3>
+  <h3 style="margin: 10px;color: #1f1f1f">拉黑你的人总数: <span id="numOfBlackListYou">加载中...</span></h3>
+  <h3 style="margin: 10px;color: #1f1f1f">被你拉黑的人总数: <span id="numOfBlackListedByYou">加载中...</span></h3>
+</div>
+
+<div id="finish-panel" class="layui-panel finish-panel" style="background-color: #f7f7f7;display: none;">
+  <p class="layui-font-green">接下来请点击按钮来为异常状态的联系人添加标签</p>
+  <p class="layui-font-red">不添加标签将会丢失检测结果</p>
+  <button type="button" class="layui-btn layui-btn-normal" style="margin: 5px;" onclick="setLabelConfirm(window.wxid)">一键添加标签</button>
+  <fieldset class="layui-elem-field layui-border-blue">
+    <legend>将会添加以下标签</legend>
+    <div class="layui-field-box">
+      <h3 style="margin: 10px;color: #1f1f1f">“#删除我的人”</h3>
+      <h3 style="margin: 10px;color: #1f1f1f">“#拉黑我的人”</h3>
+      <p style="margin: 10px;color: #1f1f1f;max-width: 300px;">被你拉黑的人可在微信的设置-朋友权限-通讯录黑名单中查看</p>
+    </div>
+  </fieldset>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/layui/css/layui.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <script src="/layui/layui.js"></script>
+    <script src="WechatAPI.js"></script>
+    <script src="index.js" defer></script>
+    <title>登录页面_微信好友检测</title>
+</head>
+<body style="background-color: #2aae67">
+
+<div class="layui-panel login-panel" style="text-align: center;background-color: #f7f7f7">
+    <div style="padding: 10px;">请使用手机扫码登录以开始检测好友</div>
+    <div style="text-align: center;">
+        <h5 id="loadingTip">二维码加载中...</h5>
+        <img id="QrCode" class="QRCode" src="assets/WechatLogo.jpg">
+        <p style="margin: 10px;"><span>UUID:</span><label for="QRUuid"></label><input id="QRUuid" style="border-width: 0"></p>
+    </div>
+    <button class="layui-btn layui-btn-primary layui-border-green"  onclick="CheckLogin()">
+        确认登录后请点我</button>
+    <p>PS: 确认登录按钮要<span style="color: crimson">多点几次</span>(直到跳转页面为止)</p>
+    <p>PS: 手机端弹出验证已通过界面后必须点"确定"按钮才能完成登录</p>
+    <p><strong>[重要]如果扫码后弹出数字验证码，扫码登录前请在微信手机端设置-通用-多语言中将语言改为English,<br>并一定一定一定要【退出登录】(不是关闭微信)手机版微信并重新登录,【刷新本页】,再次扫码登录</strong></p>
+    <p>对于国外用户,您的微信语言选择需要与您所在的地区对应</p>
+</div>
+
+</body>
+</html>
